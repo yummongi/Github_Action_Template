@@ -10,9 +10,9 @@ outputs:
   num_squared:
     description: 'Square of the input'
     # need to specify the extra volue field for composite actions
-    value: ${{ steps.get-square.outputs.num_squared }}
+    value: ${{ steps.get-square.outputs.num_squared }} #action.yml 파일에서 워크플로우(main.yml)로 값을 전달할 수 있게 해주는 설정입니다.
 runs:
-  using: 'composite'
+  using: 'composite' #액션 유형: 여러개의 스탭을 하나의 액션으로 묶어서 사용 가능 (복합 액션)
   steps:
     - name: Install Python
       uses: actions/setup-python@v4
