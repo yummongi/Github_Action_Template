@@ -3,15 +3,15 @@ on: [push]
 
 jobs:
   get-num-square:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest #작업이 최신 Ubuntu 가상 환경에서 실행되도록 지정합니다.
     name: Returns the number square
-    steps:
+    steps: #steps 섹션에서는 워크플로우에 포함된 작업 단계를 정의합니다.
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2 #actions/checkout@v2를 사용하여 코드 저장소를 체크아웃합니다.
       - name: Fetch num squared
         id: get_square
-        uses: ./ # Uses an action in the root directory
+        uses: ./ # 루트 디렉토리에서 액션을 사용하도록 지정
         with:
-          num: 11
+          num: 11 #입력값 num을 11로 설정
       - name: Print the square
-        run: echo "${{ steps.get_square.outputs.num_squared }}"
+        run: echo "${{ steps.get_square.outputs.num_squared }}" #이전 단계에서 계산된 num_squared 값 출력
