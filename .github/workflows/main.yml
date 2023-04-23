@@ -14,4 +14,4 @@ jobs:
         with:
           num: 11 #입력값 num을 11로 설정
       - name: Print the square
-        run: echo "${{ steps.get_square.outputs.num_squared }}" #이전 단계에서 계산된 num_squared 값 출력
+        run: echo "${{ steps.get_square.outputs.num_squared }}" #이전 단계 py파일 에서 계산된 num_squared 값 출력
